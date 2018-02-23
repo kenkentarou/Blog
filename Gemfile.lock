@@ -597,7 +597,7 @@ DEPENDENCIES
   meta-tags
   migration_comments
   mini_magick
-  mysql2
+  mysql2 (= 0.4.10)
   paranoia
   paranoia_uniqueness_validator
   pry
