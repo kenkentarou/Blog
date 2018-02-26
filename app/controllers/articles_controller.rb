@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  skip_before_action :require_login
   def index
     @articles = if params[:tag_slug].present?
                   set_tag
