@@ -67,12 +67,14 @@ html
                 '
                 span 記事
 
+            - if policy(Category).index?
               li
                 = link_to admin_categories_path do
                   i.fa.fa-folder-open
                   '
                   span カテゴリー
 
+            - if policy(Tag).index?
               li
                 = link_to admin_tags_path do
                   i.fa.fa-tag
