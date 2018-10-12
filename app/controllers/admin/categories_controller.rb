@@ -5,8 +5,6 @@ class Admin::CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit update destroy]
 
   def index
-    authorize(Category)
-
     @category = Category.new
   end
 
@@ -23,13 +21,9 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
-  def edit
-    authorize(@category)
-  end
+  def edit;end
 
   def update
-    authorize(@category)
-
     if @category.update(category_params)
       redirect_to admin_categories_path
     else
@@ -38,8 +32,6 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    authorize(@category)
-
     @category.destroy
 
     redirect_to admin_categories_path

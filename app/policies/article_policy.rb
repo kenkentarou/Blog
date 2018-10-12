@@ -16,11 +16,11 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || user.editor?
+    true
   end
 
   def destroy?
-    user.admin? || user.editor?
+    true
   end
 
   class Scope < Scope

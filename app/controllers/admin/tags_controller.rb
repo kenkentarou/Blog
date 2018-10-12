@@ -5,7 +5,6 @@ class Admin::TagsController < ApplicationController
   before_action :set_tag, only: %i[edit update destroy]
 
   def index
-    authorize(Tag)
 
     @tag = Tag.new
   end
@@ -23,13 +22,9 @@ class Admin::TagsController < ApplicationController
     end
   end
 
-  def edit
-    authorize(@tag)
-  end
+  def edit;end
 
   def update
-    authorize(@tag)
-
     if @tag.update(tag_params)
       redirect_to admin_tags_path
     else
@@ -38,8 +33,6 @@ class Admin::TagsController < ApplicationController
   end
 
   def destroy
-    authorize(@tag)
-
     @tag.destroy
 
     redirect_to admin_tags_path
