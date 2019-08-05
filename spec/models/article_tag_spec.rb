@@ -2,9 +2,9 @@
 #
 # Table name: article_tags
 #
-#  id         :bigint(8)        not null, primary key
-#  article_id :bigint(8)
-#  tag_id     :bigint(8)
+#  id         :bigint           not null, primary key
+#  article_id :bigint
+#  tag_id     :bigint
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

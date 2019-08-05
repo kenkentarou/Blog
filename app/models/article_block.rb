@@ -2,10 +2,10 @@
 #
 # Table name: article_blocks
 #
-#  id             :bigint(8)        not null, primary key
-#  article_id     :bigint(8)
+#  id             :bigint           not null, primary key
+#  article_id     :bigint
 #  blockable_type :string(255)
-#  blockable_id   :bigint(8)
+#  blockable_id   :bigint
 #  level          :integer          default(0), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null

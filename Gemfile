@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.6.3'
 
-gem 'rails', '5.2.0.beta2'
+gem 'rails', '5.2.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'therubyracer'
 
@@ -30,7 +30,7 @@ gem 'config'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 # Database
-gem 'mysql2', '0.4.10'
+gem 'mysql2'
 gem 'redis-rails'
 
 # Seeds
@@ -100,9 +100,9 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'bullet'
   gem 'coffeelint'
-  gem 'rails_best_practices', '~> 1.18.1'
-  gem 'reek', '~> 4.6.2'
-  gem 'rubocop', '~> 0.49'
+  gem 'rails_best_practices'
+  gem 'reek'
+  gem 'rubocop', '~> 0.72.0'
   gem 'scss_lint', require: false
   gem 'slim_lint'
 

@@ -2,9 +2,9 @@
 #
 # Table name: articles
 #
-#  id           :bigint(8)        not null, primary key
-#  category_id  :bigint(8)
-#  author_id    :bigint(8)
+#  id           :bigint           not null, primary key
+#  category_id  :bigint
+#  author_id    :bigint
 #  uuid         :string(255)
 #  slug         :string(255)
 #  title        :string(255)
