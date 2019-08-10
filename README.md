@@ -22,7 +22,7 @@
 - リポジトリのクローン
 
 ```bash
-$ git@github.com:startup-technology/blog.git
+$ git@github.com:startup-technology/runteq_curriculum_advanced.git
 ```
 
 - Gemのインストール
