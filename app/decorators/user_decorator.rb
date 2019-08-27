@@ -12,7 +12,7 @@ module UserDecorator
                 false
               end
 
-    (command ? avatar.variant(command).processed : avatar).service_url(expires_in: 100.years)
+    command ? avatar.variant(command).processed : avatar
   end
 
   private
