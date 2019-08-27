@@ -11,6 +11,6 @@ module MediumDecorator
                   false
               end
 
-    (command ? attachment.variant(command).processed : attachment).service_url(expires_in: 100.years)
+    (command ? attachment.variant(command).processed : attachment)
   end
 end

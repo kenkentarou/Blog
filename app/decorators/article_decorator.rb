@@ -15,6 +15,6 @@ module ArticleDecorator
                 false
               end
 
-    (command ? eye_cache.variant(command).processed : eye_cache).service_url(expires_in: 100.years)
+    (command ? eye_cache.variant(command).processed : eye_cache)
   end
 end
