@@ -1,7 +1,7 @@
 module SiteDecorator
   def favicon_url(sizes)
     return nil unless favicon.attached?
-    favicon.variant(resize: sizes).processed.service_url
+    favicon.variant(resize: sizes).processed
   end
 
   def og_image_url(version = :origin)
@@ -14,6 +14,6 @@ module SiteDecorator
                   false
               end
 
-    (command ? og_image.variant(command).processed : og_image)
+    command ? og_image.variant(command).processed : og_image
   end
 end

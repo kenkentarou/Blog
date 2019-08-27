@@ -12,7 +12,7 @@ module UserDecorator
                 false
               end
 
-    (command ? avatar.variant(command).processed : avatar)
+    command ? avatar.variant(command).processed : avatar
   end
 
   private

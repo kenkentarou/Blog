@@ -11,6 +11,6 @@ module MediumDecorator
                   false
               end
 
-    (command ? attachment.variant(command).processed : attachment)
+    command ? attachment.variant(command).processed : attachment
   end
 end
