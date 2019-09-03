@@ -24,7 +24,6 @@ $(function() {
       return alert('エラーが発生しました');
     });
     $root.on('ajax:complete', '.js-insert-article-block', function() {
-      debugger
       $root.find('.modal').modal('hide');
       $('body').removeClass('modal-open');
       $('.modal-backdrop').remove();
