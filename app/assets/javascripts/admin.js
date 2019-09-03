@@ -24,7 +24,10 @@ $(function() {
       return alert('エラーが発生しました');
     });
     $root.on('ajax:complete', '.js-insert-article-block', function() {
-      return $root.find('.modal').modal('hide');
+      debugger
+      $root.find('.modal').modal('hide');
+      $('body').removeClass('modal-open');
+      $('.modal-backdrop').remove();
     });
     $root.on('ajax:before', '.js-remove-article-block', function() {
       return confirm('ブロックを削除しますか？');
