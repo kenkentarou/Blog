@@ -58,13 +58,13 @@ $ cp .env.default .env
 ### Database creation
 
 ```bash
-$ rake db:create db:reset
+$ bundle exec rails db:create db:reset
 ```
 
 ### Database initialization
 
 ```bash
-$ rake db:seed
+$ bundle exec rails db:seed
 ```
 
 ## Run rails server
@@ -134,10 +134,6 @@ $ bundle exec scss-lint
 ```bash
 $ bundle exec slim-lint
 ```
-
-## EditorConfig
-
--  ご自身のエディタに[EditorConfig](http://editorconfig.org/)のインストールをお願いします。
 
 ## Development controller
 
