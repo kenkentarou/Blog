@@ -9,7 +9,7 @@ $(function() {
     toolbarPlacement: 'bottom',
     showTodayButton: true,
     showClear: true,
-    format: 'YYYY-MM-DD HH:00'
+    format: 'YYYY-MM-DD HH:mm'
   });
   $('.js-select2').select2();
   autosize($('.js-autosize'));
