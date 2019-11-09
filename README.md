@@ -53,8 +53,6 @@ $ cp config/database.yml.default config/database.yml
 $ cp .env.default .env
 ```
 
-*AWSのアクセスキーなどは個別に担当者に聞いてください。*
-
 ### Database creation
 
 ```bash
