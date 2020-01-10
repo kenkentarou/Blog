@@ -138,7 +138,7 @@ group :test do
   gem 'faker'
   gem 'fuubar'
   gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'webdriver'
   gem 'shoulda-matchers'
   gem 'timecop'
 end

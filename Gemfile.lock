@@ -136,7 +136,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    childprocess (3.0.0)
     chronic (0.10.2)
     cocoon (1.2.14)
     code_analyzer (0.5.1)
@@ -453,7 +452,6 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
     ruby2_keywords (0.0.2)
-    rubyzip (2.0.0)
     rufus-scheduler (3.6.0)
       fugit (~> 1.1, >= 1.1.6)
     sass (3.7.4)
@@ -479,9 +477,6 @@ GEM
     seed-fu (2.3.9)
       activerecord (>= 3.1)
       activesupport (>= 3.1)
-    selenium-webdriver (3.142.7)
-      childprocess (>= 0.5, < 4.0)
-      rubyzip (>= 1.2.2)
     sexp_processor (4.13.0)
     shoulda-matchers (4.2.0)
       activesupport (>= 4.2.0)
@@ -563,6 +558,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdriver (0.5.0)
     webpacker (4.2.2)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -642,7 +638,6 @@ DEPENDENCIES
   scss_lint
   sdoc (~> 0.4.0)
   seed-fu
-  selenium-webdriver
   shoulda-matchers
   simple_form
   simplecov
@@ -660,6 +655,7 @@ DEPENDENCIES
   validates_email_format_of
   virtus
   web-console
+  webdriver
   webpacker
   whenever
 
