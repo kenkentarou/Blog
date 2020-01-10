@@ -134,11 +134,9 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'database_cleaner'
   gem 'faker'
   gem 'fuubar'
-  gem 'launchy'
-  gem 'webdriver'
+  gem 'webdrivers'
   gem 'shoulda-matchers'
   gem 'timecop'
 end
