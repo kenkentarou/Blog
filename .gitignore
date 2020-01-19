@@ -80,3 +80,7 @@ node_modules/
 /public/packs
 /public/packs-test
 /node_modules
+
+/vendor/bundle
+.env
+.database.yml
