@@ -12,6 +12,7 @@
 
 FactoryBot.define do
   factory :site do
-    
+    name { Faker::Name.name }
+    subtitle { Faker::Name.name }
   end
 end
