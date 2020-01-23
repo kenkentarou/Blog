@@ -80,7 +80,6 @@ class Article < ApplicationRecord
     end
   end
 
-  # FIXME: レンダリングのために引数でコントローラーを渡しているが、そもそもコントローラーに移した方がいいかもしれない
   def build_body(controller)
     result = ''
 
