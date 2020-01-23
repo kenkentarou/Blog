@@ -79,3 +79,6 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+      - store_artifacts:
+          path: tmp/screenshots
+          destination: test-screenshots
