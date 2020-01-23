@@ -9,10 +9,3 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-
-FactoryBot.define do
-  factory :site do
-    name { Faker::Name.name }
-    subtitle { Faker::Name.name }
-  end
-end
