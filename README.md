@@ -83,50 +83,6 @@ $ ./bin/webpack-dev-server
 $ spring rspec spec/[対象ファイル]
 ```
 
-## How to run the static code analysis
-
-### Rubocop
-
-```bash
-$ bundle exec rubocop -R
-```
-
-### Reek
-
-```bash
-$ bundle exec reek
-```
-
-### Rails best practices
-
-```bash
-$ bundle exec rails_best_practices
-```
-
-### Brakeman
-
-```bash
-$ bundle exec brakeman
-```
-
-### ESLint
-
-```bash
-$ npm run lint
-```
-
-### SCSS-Lint
-
-```bash
-$ bundle exec scss-lint
-```
-
-### Slim-Lint
-
-```bash
-$ bundle exec slim-lint
-```
-
 ## Development controller
 
 ### Force login
