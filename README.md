@@ -19,12 +19,6 @@
 
 ## Project initiation
 
-- リポジトリのクローン
-
-```bash
-$ git@github.com:startup-technology/runteq_curriculum_advanced.git
-```
-
 - Gemのインストール
 
 ```bash
@@ -62,7 +56,7 @@ $ bundle exec rails db:create db:reset
 ### Database initialization
 
 ```bash
-$ bundle exec rails db:seed
+$ bundle exec rails db:seed_fu
 ```
 
 ## Run rails server
@@ -87,50 +81,6 @@ $ ./bin/webpack-dev-server
 
 ```bash
 $ spring rspec spec/[対象ファイル]
-```
-
-## How to run the static code analysis
-
-### Rubocop
-
-```bash
-$ bundle exec rubocop -R
-```
-
-### Reek
-
-```bash
-$ bundle exec reek
-```
-
-### Rails best practices
-
-```bash
-$ bundle exec rails_best_practices
-```
-
-### Brakeman
-
-```bash
-$ bundle exec brakeman
-```
-
-### ESLint
-
-```bash
-$ npm run lint
-```
-
-### SCSS-Lint
-
-```bash
-$ bundle exec scss-lint
-```
-
-### Slim-Lint
-
-```bash
-$ bundle exec slim-lint
 ```
 
 ## Development controller
