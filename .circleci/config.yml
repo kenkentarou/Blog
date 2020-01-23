@@ -46,7 +46,7 @@ jobs:
       # Database setup
       - run: cp -v config/database.ci.yml config/database.yml
       - run: bundle exec rake db:schema:load
-
+      - run: bundle exec bin/webpack
       - run:
           name: clone repository of rspec
           command: |
@@ -82,3 +82,4 @@ jobs:
       - store_artifacts:
           path: tmp/screenshots
           destination: test-screenshots
+
