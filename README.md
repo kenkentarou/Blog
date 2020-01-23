@@ -56,7 +56,7 @@ $ bundle exec rails db:create db:reset
 ### Database initialization
 
 ```bash
-$ bundle exec rails db:seed
+$ bundle exec rails db:seed_fu
 ```
 
 ## Run rails server
