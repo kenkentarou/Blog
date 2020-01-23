@@ -14,7 +14,7 @@
 
 - MySQL >= 5.5
 - Redis
-- Node.js >= 6.0.0
+- Node.js >= 12.14.0
 - Yarn >= 0.20.1
 
 ## Project initiation
