@@ -92,7 +92,14 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
   config.filter_run_when_matching :focus
   config.before :suite do
-    fixture_paths = "#{Rails.root}/db/fixtures/development"
+    fixture_paths = "#{Rails.root}/db/fixtures/#{Rails.env}"
     SeedFu.seed(fixture_paths)
   end
+  #config.before(:suite) do
+  #  SeedFu.fixture_paths = ["#{Rails.root}/db/fixtures"]
+  #  SeedFu.seed
+  #end
+  #config.before :suite do
+  #  SeedFu.seed
+  #end
 end
