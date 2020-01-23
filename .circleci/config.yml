@@ -46,7 +46,7 @@ jobs:
       # Database setup
       - run: cp -v config/database.ci.yml config/database.yml
       - run: bundle exec rake db:schema:load
-      - run: bundle exec bin/webpack
+      - run: ./bin/webpack
       - run:
           name: clone repository of rspec
           command: |
