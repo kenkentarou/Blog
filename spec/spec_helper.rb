@@ -95,11 +95,4 @@ RSpec.configure do |config|
     fixture_paths = "#{Rails.root}/db/fixtures/#{Rails.env}"
     SeedFu.seed(fixture_paths)
   end
-  #config.before(:suite) do
-  #  SeedFu.fixture_paths = ["#{Rails.root}/db/fixtures"]
-  #  SeedFu.seed
-  #end
-  #config.before :suite do
-  #  SeedFu.seed
-  #end
 end
