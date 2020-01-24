@@ -140,5 +140,4 @@ group :test do
   gem 'shoulda-matchers'
   gem 'timecop'
   gem 'rspec_junit_formatter'
-  gem 'webdrivers'
 end

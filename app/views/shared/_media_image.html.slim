@@ -1,8 +1,6 @@
 ruby:
   medium = local_assigns[:medium]
 
-- if medium.image_url
-  .media-image
+.media-image
+  - if medium.attachment.attached?
     = image_tag medium.image_url(:lg)
-- else
-  .media-image
