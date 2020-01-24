@@ -22,7 +22,13 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+
+# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+# Checks for pending migrations before tests are run.
+# If you are not using ActiveRecord, you can remove this line.
+ActiveRecord::Migration.maintain_test_schema!
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -32,13 +38,44 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
+  config.include LoginMacros
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
+
+  # config.use_transactional_fixtures = true
+
+  # Include Factory Girl syntax to simplify calls to factories
+  config.include FactoryBot::Syntax::Methods
+
+  # Include custom login macros
+  # config.include LoginMacros
+
+  # Configure DatabaseCleaner to reset data between tests
+  #config.before(:suite) do
+  #  DatabaseCleaner.strategy = :transaction
+  #  DatabaseCleaner.clean_with :truncation
+  #  require Rails.root.join 'db', 'seeds'
+  #end
+
+  #config.before :all do
+  #  FactoryBot.reload
+  #end
+
+  #config.around(:each) do |example|
+  #  DatabaseCleaner.cleaning do
+  #    example.run
+  #  end
+  #end
+  #
+  #config.after(:each) do
+  #  DatabaseCleaner.clean
+  #end
+
   config.use_transactional_fixtures = true
 
   # RSpec Rails can automatically mix in different behaviours to your tests
@@ -54,6 +91,8 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
+  config.use_transactional_fixtures = true
+  config.filter_rails_from_backtrace!
   config.infer_spec_type_from_file_location!
 
   # Filter lines from Rails gems in backtraces.

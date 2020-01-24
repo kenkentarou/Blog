@@ -81,6 +81,7 @@ node_modules/
 /public/packs-test
 /node_modules
 
+.byebug_history
 /public/packs
 /public/packs-test
 /node_modules

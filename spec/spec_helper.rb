@@ -93,4 +93,10 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.filter_run_when_matching :focus
+  config.before :suite do
+    fixture_paths = "#{Rails.root}/db/fixtures/#{Rails.env}"
+    SeedFu.seed(fixture_paths)
+  end
 end
