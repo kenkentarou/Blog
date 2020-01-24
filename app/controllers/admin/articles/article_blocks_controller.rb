@@ -36,7 +36,6 @@ class Admin::Articles::ArticleBlocksController < ApplicationController
   def update
     if @article_block.blockable.update(blockable_params)
       if @article_block.medium?
-        # FIXME remote: true では Ajaxでファイルアップロードができない
         redirect_to edit_admin_article_path(@article.uuid)
       else
         head :ok

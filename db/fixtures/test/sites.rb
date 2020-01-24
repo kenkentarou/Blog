@@ -4,4 +4,3 @@ Site.seed(
   name: 'Blog',
   subtitle: 'Very awesome!'
 )
-
