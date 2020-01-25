@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe '管理画面', type: :system do
   describe 'タグ' do
     let(:admin) { create(:user) }
-    let!(:tag) { create(:taxonomy) }
+    let!(:tag) { create(:tag) }
     context 'パンくず表示' do
       it 'タグ一覧画面でパンくず表示' do
         login_as(admin)
