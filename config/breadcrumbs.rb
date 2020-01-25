@@ -92,12 +92,12 @@ crumb :edit_admin_article do |article|
   parent :admin_articles
 end
 
-crumb :admin_article_tags do
+crumb :admin_tags do
   link 'タグ', admin_tags_path
   parent :admin_dashboard
 end
 
-crumb :edit_admin_article_tag do |tag|
-  link 'タグ編集', edit_admin_tag_path(tag.id)
-  parent :admin_article_tags
+crumb :edit_admin_tag do |tag|
+  link 'タグ編集', edit_admin_tag_path(tag)
+  parent :admin_tags
 end
