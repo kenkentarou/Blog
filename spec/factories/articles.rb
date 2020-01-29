@@ -30,5 +30,10 @@ FactoryBot.define do
   factory :article do
     sequence(:title) { |n| "title-#{n}" }
     sequence(:slug) { |n| "slug-#{n}" }
+    state { :waiting_publish }
+    category
+    trait :draft do
+      state { :draft }
+    end
   end
 end
