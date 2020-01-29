@@ -39,7 +39,7 @@ class Article < ApplicationRecord
 
   has_one_attached :eye_cache
 
-  enum state: %i[draft published]
+  enum state: %i[draft published waiting_publish]
 
   validates :slug, slug_format: true, uniqueness: true, length: { maximum: 255 }, allow_blank: true
   validates :title, presence: true, uniqueness: true, length: { maximum: 255 }
@@ -105,5 +105,13 @@ class Article < ApplicationRecord
 
   def prev_article
     @prev_article ||= Article.viewable.order(published_at: :desc).where('published_at < ?', published_at).first
+  end
+
+  def assign_state
+    self.state = if Time.current < published_at
+                   :waiting_publish
+                 else
+                   :published
+                 end
   end
 end
