@@ -10,11 +10,10 @@ class Admin::Articles::PublishesController < ApplicationController
     if @article.valid?
       Article.transaction do
         @article.body = @article.build_body(self)
-        @article.save!
       end
-
-      flash[:notice] = '記事を公開しました'
-
+      @article.assign_state
+      @article.save
+      flash[:notice] = flash_message(@article)
       redirect_to edit_admin_article_path(@article.uuid)
     else
       flash.now[:alert] = 'エラーがあります。確認してください。'
@@ -28,5 +27,13 @@ class Admin::Articles::PublishesController < ApplicationController
 
   def set_article
     @article = Article.find_by!(uuid: params[:article_uuid])
+  end
+
+  def flash_message(article)
+    if article.published?
+      '記事を公開しました'
+    elsif article.publish_wait?
+      '記事を公開待ちにしました'
+    end
   end
 end
