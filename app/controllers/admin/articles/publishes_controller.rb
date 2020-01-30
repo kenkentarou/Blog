@@ -11,8 +11,8 @@ class Admin::Articles::PublishesController < ApplicationController
       Article.transaction do
         @article.body = @article.build_body(self)
       end
-        @article.assign_state
-        @article.save
+      @article.assign_state
+      @article.save
       flash[:notice] = flash_message(@article)
       redirect_to edit_admin_article_path(@article.uuid)
     else
