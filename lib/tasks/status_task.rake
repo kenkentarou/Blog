@@ -3,7 +3,7 @@ namespace :status_task do
   task published: :environment do
     Article.publish_wait.find_each do |article|
       if article.published_at < Time.current
-      article&.published!
+        article&.published!
       end
     end
   end
