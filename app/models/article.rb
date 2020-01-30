@@ -39,7 +39,7 @@ class Article < ApplicationRecord
 
   has_one_attached :eye_cache
 
-  enum state: %i[draft published waiting_publish]
+  enum state: %i[draft published publish_wait]
 
   validates :slug, slug_format: true, uniqueness: true, length: { maximum: 255 }, allow_blank: true
   validates :title, presence: true, uniqueness: true, length: { maximum: 255 }
@@ -109,7 +109,7 @@ class Article < ApplicationRecord
 
   def assign_state
     self.state = if Time.current < published_at
-                   :waiting_publish
+                   :publish_wait
                  else
                    :published
                  end

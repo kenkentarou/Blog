@@ -32,7 +32,7 @@ class Admin::Articles::PublishesController < ApplicationController
   def flash_message(article)
     if article.published?
       '記事を公開しました'
-    elsif article.waiting_publish?
+    elsif article.publish_wait?
       '記事を公開待ちにしました'
     end
   end
