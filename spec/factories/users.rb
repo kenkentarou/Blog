@@ -17,7 +17,7 @@
 #
 
 FactoryBot.define do
-  factory :user do
+  factory :admin_user, class: User do
     name { 'admin' }
     role { :admin }
     password { 'password' }

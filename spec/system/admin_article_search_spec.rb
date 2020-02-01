@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe '管理画面', type: :system do
-  let(:admin) { create(:user) }
+  let(:admin) { create(:admin_user) }
   let(:article_with_author) { create(:article, :with_author, author_name: 'あああああ') }
   let(:article_with_other_author) { create(:article, :with_author, author_name: 'いいいいい') }
   let(:article_with_tag) { create(:article, :with_tag, tag_name: 'aaaaa') }

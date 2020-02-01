@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe '管理画面', type: :system do
-  let(:admin) { create(:user) }
+  let(:admin) { create(:admin_user) }
   let(:article) { create :article }
   before do
     login_as(admin)
