@@ -63,17 +63,30 @@ class Article < ApplicationRecord
   scope :new_arrivals, -> { viewable.order(published_at: :desc) }
   scope :by_category, ->(category_id) { where(category_id: category_id) }
   scope :title_contain, ->(word) { where('title LIKE ?', "%#{word}%") }
-
+  scope :by_author, ->(author_id) { where(author_id: author_id) }
+  scope :by_tag, ->(tag_id) { joins(:article_tags).where(article_tags: { tag_id: tag_id }) }
+  scope :body_contain, ->(word) { joins(:sentences).where('sentences.body LIKE ?', "%#{word}%") }
   class << self
     def search(search_articles_form)
       relation = Article.distinct
-
       if search_articles_form.category_id?
         relation = relation.by_category(search_articles_form.category_id)
       end
 
+      if search_articles_form.author_id?
+        relation = relation.by_author(search_articles_form.author_id)
+      end
+
+      if search_articles_form.tag_id?
+        relation = relation.by_tag(search_articles_form.tag_id)
+      end
+
       search_articles_form.title_words.each do |word|
         relation = relation.title_contain(word)
+      end
+
+      search_articles_form.body_words.each do |word|
+        relation = relation.body_contain(word)
       end
 
       relation
