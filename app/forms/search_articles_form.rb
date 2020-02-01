@@ -5,9 +5,9 @@ class SearchArticlesForm
   include ActiveModel::Conversion
 
   attribute :category_id, Integer
-  attribute :title, String
   attribute :author_id, Integer
   attribute :tag_id, Integer
+  attribute :title, String
   attribute :body, String
 
   def category_id?
