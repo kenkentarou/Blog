@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe '管理画面', type: :system do
   let(:admin) { create(:user) }
-  let!(:category) { create :category }
-  let(:article) { create :article, category: category }
+  let(:article) { create :article }
   before do
     login_as(admin)
   end
