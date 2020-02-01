@@ -32,8 +32,41 @@ FactoryBot.define do
     sequence(:slug) { |n| "slug-#{n}" }
     state { :publish_wait }
     category
+
     trait :draft do
       state { :draft }
+    end
+
+    trait :with_author do
+      transient do
+        sequence(:author_name) { |n| "test_author_name_#{n}" }
+        sequence(:tag_slug) { |n| "test_author_slug_#{n}" }
+      end
+
+      after(:build) do |article, evaluator|
+        article.author = build(:author, name: evaluator.author_name, slug: evaluator.tag_slug)
+      end
+    end
+
+    trait :with_tag do
+      transient do
+        sequence(:tag_name) { |n| "test_tag_name_#{n}" }
+        sequence(:tag_slug) { |n| "test_tag_slug_#{n}" }
+      end
+
+      after(:build) do |article, evaluator|
+        article.tags << build(:tag, name: evaluator.tag_name, slug: evaluator.tag_slug)
+      end
+    end
+
+    trait :with_sentence do
+      transient do
+        sequence(:sentence_body) { |n| "test_body_#{n}" }
+      end
+
+      after(:build) do |article, evaluator|
+        article.sentences << create(:sentence, body: evaluator.sentence_body)
+      end
     end
   end
 end
