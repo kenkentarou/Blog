@@ -20,7 +20,7 @@ Rails.application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local = false
-  config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :forbidden
+  config.action_dispatch.rescue_responses['Pundit::NotAuthorizedError'] = :forbidden
   config.action_controller.perform_caching = false
 
   # Raise exceptions instead of rendering exception templates.

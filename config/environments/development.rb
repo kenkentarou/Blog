@@ -14,7 +14,7 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = false
-  config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :forbidden
+  config.action_dispatch.rescue_responses['Pundit::NotAuthorizedError'] = :forbidden
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
