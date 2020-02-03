@@ -17,15 +17,15 @@ RSpec.describe '管理画面', type: :system do
       context '権限のないページへのアクセスで403エラー画面を返す' do
         it 'カテゴリー' do
           visit admin_categories_path
-          expect(find('.error-content-type')).to have_content '403'
+          expect(page).to have_http_status(403)
         end
         it 'タグ' do
           visit admin_tags_path
-          expect(find('.error-content-type')).to have_content '403'
+          expect(page).to have_http_status(403)
         end
         it '著者' do
           visit admin_authors_path
-          expect(find('.error-content-type')).to have_content '403'
+          expect(page).to have_http_status(403)
         end
       end
     end
