@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   class Forbidden < ActionController::ActionControllerError
   end
 
-  rescue_from Forbidden, with: :rescue403
+  rescue_from Pundit::NotAuthorizedError, with: :rescue403
 
   def rescue403
     render file: 'public/403', status: 403, layout: false
