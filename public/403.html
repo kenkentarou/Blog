@@ -1,0 +1,65 @@
+<style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    background-color: #f0f0f0;
+    color: #212121;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+    height: 100%;
+  }
+
+  .error-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .error-content-type {
+    color: #00bcd4;
+    font-size: 160px;
+    font-weight: bold;
+  }
+
+  .error-content-title {
+    color: #00bcd4;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 1em;
+  }
+
+  .error-content-desc {
+    font-size: 16px;
+    padding-bottom: 80px;
+    padding-left: 1em;
+  }
+
+  @media screen and (max-width: 767px) {
+    .error-content-type {
+      font-size: 80px;
+    }
+
+    .error-content-title {
+      font-size: 20px;
+    }
+
+    .error-content-desc {
+      font-size: 14px;
+      padding-bottom: 40px;
+    }
+  }
+</style>
+
+<body>
+<div class="error-content">
+  <div class="error-content-type">403</div>
+  <h1 class="error-content-title">権限エラー</h1>
+  <p class="error-content-desc">権限がありません</p>
+</div>
+</body>
