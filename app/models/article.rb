@@ -37,7 +37,7 @@ class Article < ApplicationRecord
   has_many :media, through: :article_blocks, source: :blockable, source_type: 'Medium'
   has_many :embeds, through: :article_blocks, source: :blockable, source_type: 'Embed'
 
-  has_one_attached :eye_cache
+  has_one_attached :eye_catch
 
   enum state: %i[draft published publish_wait]
 
@@ -45,7 +45,7 @@ class Article < ApplicationRecord
   validates :title, presence: true, uniqueness: true, length: { maximum: 255 }
   validates :description, length: { maximum: 1000 }, allow_blank: true
   validates :state, presence: true
-  validates :eye_cache, attachment: { purge: true, content_type: %r{\Aimage/(png|jpeg)\Z}, maximum: 10485760 }
+  validates :eye_catch, attachment: { purge: true, content_type: %r{\Aimage/(png|jpeg)\Z}, maximum: 10485760 }
 
   with_options if: :published? do |v|
     v.validates :slug, slug_format: true, presence: true, length: { maximum: 255 }
