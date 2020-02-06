@@ -1,8 +1,8 @@
 - cache article do
   .card
-    - if article.eye_cache.attached?
+    - if article.eye_catch.attached?
       = link_to article_path(article.category_slug, article.slug) do
-        = image_tag article.eye_cache_url(:thumb), class: 'card-img-top'
+        = image_tag article.eye_catch_url(:thumb), class: 'card-img-top'
 
     .card-body
       p.card-link = link_to article.category_name, category_path(article.category_slug)

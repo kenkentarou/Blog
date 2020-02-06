@@ -29,9 +29,9 @@
           = f.input :published_at, as: :date_time_picker
           = f.input :title
           = f.input :slug
-          = f.input :eye_cache, as: :file
-          - if @article.eye_cache.attached?
-            = image_tag @article.eye_cache_url(:thumb), class: 'img-thumbnail'
+          = f.input :eye_catch, as: :file
+          - if @article.eye_catch.attached?
+            = image_tag @article.eye_catch_url(:thumb), class: 'img-thumbnail'
             br
             br
           = f.input :description, input_html: { class: 'js-autosize' }
