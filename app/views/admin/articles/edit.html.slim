@@ -33,8 +33,7 @@
           - if @article.eye_catch.attached?
             = image_tag @article.eye_catch_url(:thumb), class: 'img-thumbnail'
           = f.input_field :eyecatch_align, as: :radio_buttons
-          = f.label :eyecatch_width, class: 'control-label'
-          = f.number_field :eyecatch_width, in: 100..700, step: 1, placeholder: '100'
+          = f.input :eyecatch_width, placeholder: '100'
             br
             br
           = f.input :description, input_html: { class: 'js-autosize' }
