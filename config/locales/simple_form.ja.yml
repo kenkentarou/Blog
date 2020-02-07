@@ -60,6 +60,9 @@ ja:
         category_id: 'カテゴリー'
         author_id: '著者'
         tag_ids: 'タグ'
+        eyecatch_align_left: '左寄せ'
+        eyecatch_align_center: '中央'
+        eyecatch_align_right: '右寄せ'
       medium:
         media_type: 'メディアタイプ'
         attachment: 'ファイル'
