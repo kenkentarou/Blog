@@ -40,7 +40,7 @@ ja:
         slug: 'スラッグ'
         state: '状態'
         description: '概要'
-        eye_cache: 'アイキャッチ'
+        eye_catch: 'アイキャッチ'
         category: 'カテゴリー'
         tag: 'タグ'
         author: '著者'

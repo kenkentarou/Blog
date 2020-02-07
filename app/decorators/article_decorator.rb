@@ -1,7 +1,7 @@
 module ArticleDecorator
-  def eye_cache_url(version = :origin)
-    if !eye_cache.attached? || eye_cache.metadata.blank?
-      return '/images/eye_cache.jpg'
+  def eye_catch_url(version = :origin)
+    if !eye_catch.attached? || eye_catch.metadata.blank?
+      return '/images/eye_catch.jpg'
     end
 
     command = case version
@@ -15,6 +15,6 @@ module ArticleDecorator
                 false
               end
 
-    command ? eye_cache.variant(command).processed : eye_cache
+    command ? eye_catch.variant(command).processed : eye_catch
   end
 end

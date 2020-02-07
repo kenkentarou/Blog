@@ -56,7 +56,7 @@ ja:
         slug: 'スラッグ'
         state: '状態'
         description: '概要'
-        eye_cache: 'アイキャッチ'
+        eye_catch: 'アイキャッチ'
         category_id: 'カテゴリー'
         author_id: '著者'
         tag_ids: 'タグ'
