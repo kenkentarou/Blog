@@ -32,6 +32,9 @@
           = f.input :eye_cache, as: :file
           - if @article.eye_cache.attached?
             = image_tag @article.eye_cache_url(:thumb), class: 'img-thumbnail'
+          = f.input_field :eyecatch_align, as: :radio_buttons
+          = f.label :eyecatch_width, class: 'control-label'
+          = f.number_field :eyecatch_width, in: 100..700, step: 1, placeholder: '100'
             br
             br
           = f.input :description, input_html: { class: 'js-autosize' }
