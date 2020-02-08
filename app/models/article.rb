@@ -40,12 +40,14 @@ class Article < ApplicationRecord
   has_one_attached :eye_catch
 
   enum state: %i[draft published publish_wait]
+  enum eyecatch_align: %i[left center right]
 
   validates :slug, slug_format: true, uniqueness: true, length: { maximum: 255 }, allow_blank: true
   validates :title, presence: true, uniqueness: true, length: { maximum: 255 }
   validates :description, length: { maximum: 1000 }, allow_blank: true
   validates :state, presence: true
   validates :eye_catch, attachment: { purge: true, content_type: %r{\Aimage/(png|jpeg)\Z}, maximum: 10485760 }
+  validates :eyecatch_width, numericality: { less_than_or_equal_to: 700, greater_than_or_equal_to: 100 }, allow_blank: true
 
   with_options if: :published? do |v|
     v.validates :slug, slug_format: true, presence: true, length: { maximum: 255 }

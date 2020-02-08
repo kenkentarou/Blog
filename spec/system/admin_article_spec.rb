@@ -55,5 +55,45 @@ RSpec.describe '管理画面', type: :system do
         expect(page).to have_content "記事を公開しました"
       end
     end
+    describe '記事編集'
+      context '記事の画像を右寄せで指定して更新した場合' do
+        it 'プレビュー画面で右寄せに画像が表示' do
+          article = create(:article , published_at: Time.current.tomorrow)
+          visit edit_admin_article_path(article.uuid)
+          attach_file 'アイキャッチ', Rails.root.join('spec', 'fixtures', 'images', 'fixture.png')
+          choose '右寄せ'
+          fill_in '横幅', with: '100'
+          click_button '更新する'
+          click_link 'プレビュー'
+          switch_to_window(windows.last)
+          expect(page).to have_css('.text-right')
+        end
+        context '記事の画像を中央で指定して更新した場合' do
+          it 'プレビュー画面で中央に画像が表示' do
+          article = create(:article , published_at: Time.current.tomorrow)
+          visit edit_admin_article_path(article.uuid)
+          attach_file 'アイキャッチ', Rails.root.join('spec', 'fixtures', 'images', 'fixture.png')
+          choose '中央'
+          fill_in '横幅', with: '100'
+          click_button '更新する'
+          click_link 'プレビュー'
+          switch_to_window(windows.last)
+          expect(page).to have_css('.text-center')
+          end
+        end
+        context '記事の画像を左寄せで指定して更新した場合' do
+          it 'プレビュー画面で左寄せに画像が表示' do
+          article = create(:article , published_at: Time.current.tomorrow)
+          visit edit_admin_article_path(article.uuid)
+          attach_file 'アイキャッチ', Rails.root.join('spec', 'fixtures', 'images', 'fixture.png')
+          choose '左寄せ'
+          fill_in '横幅', with: '100'
+          click_button '更新する'
+          click_link 'プレビュー'
+          switch_to_window(windows.last)
+          expect(page).to have_css('.text-left')
+          end
+        end
+    end
   end
 end
