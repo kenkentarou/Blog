@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe '管理画面', type: :system do
   let(:admin) { create(:admin_user) }
-  let(:article) { create :article }
+  let(:article) { create(:article) }
   before do
     login_as(admin)
   end
@@ -92,6 +92,36 @@ RSpec.describe '管理画面', type: :system do
           click_link 'プレビュー'
           switch_to_window(windows.last)
           expect(page).to have_css('.text-left')
+          end
+        end
+        context 'youtubeの埋め込みをした場合' do
+          it 'URLを入力するとyoutubeのサムネイルが表示' do
+            article
+            visit edit_admin_article_path(article.uuid)
+            click_link 'ブロックを追加する'
+            click_link '埋め込み'
+            click_link '編集'
+            select 'YouTube', from: '埋め込みタイプ'
+            fill_in 'ID', with: 'https://youtu.be/fWa-ojrlxTo'
+            within '#embed_button' do
+              click_button '更新する'
+            end
+            expect(page).to have_css('.embed-youtube')
+          end
+          context 'twitterの埋め込みをした場合' do
+          it 'URLを入力するとtwitterのサムネイルが表示' do
+            article
+            visit edit_admin_article_path(article.uuid)
+            click_link 'ブロックを追加する'
+            click_link '埋め込み'
+            click_link '編集'
+            select 'Twitter', from: '埋め込みタイプ'
+            fill_in 'ID', with: 'https://twitter.com/681297hirokazu3/status/1160673012774924288'
+            within '#embed_button' do
+              click_button '更新する'
+            end
+            expect(page).to have_css('.embed-twitter')
+          end
           end
         end
     end
