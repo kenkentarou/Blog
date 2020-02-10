@@ -4,6 +4,7 @@ RSpec.describe '管理画面', type: :system do
   let(:write) { create(:write_user) }
   let(:article) { create :article }
   before do
+    driven_by :rack_test
     login_as(write)
   end
   describe '権限管理' do
