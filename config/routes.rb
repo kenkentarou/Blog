@@ -19,11 +19,7 @@ Rails.application.routes.draw do
     resources :invitations, param: :uuid, only: %i[index new create destroy] do
       resource :register, only: %i[show create]
     end
-    resource :site, only: %i[edit update destroy] do
-      member do
-        delete '/delete_attachments/:blob_id', to: 'sites/attachments#destroy', as: :delete_attachments
-      end
-    end
+    resource :site, only: %i[edit update destroy]
     resources :categories, only: %i[index create edit update destroy]
     resources :tags, only: %i[index create edit update destroy]
     resources :authors, only: %i[index create edit update destroy]
@@ -35,7 +31,7 @@ Rails.application.routes.draw do
       end
     end
   end
-
+  delete '/delete_attachments/:blob_id', to: 'sites/attachments#destroy', as: :delete_attachments
   get '/admin' => redirect('/admin/login/identifier')
 
   get '/tags/:tag_slug', as: :tag, to: 'articles#index'
