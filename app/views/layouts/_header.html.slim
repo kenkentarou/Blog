@@ -2,4 +2,8 @@ header.jumbotron.jumbotron-fluid
   .container
     h1 = link_to current_site.name, root_path
     p.lead = current_site.subtitle
-
+    .swiper-container
+      .swiper-wrapper
+        - current_site.main_images.each do |file|
+          .swiper-slide
+            = image_tag file.variant(resize:'1200x100').processed, class: 'img-responsive'

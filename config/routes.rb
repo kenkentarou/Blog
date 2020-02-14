@@ -30,6 +30,7 @@ Rails.application.routes.draw do
         patch :swap_level
       end
     end
+    delete '/delete_attachments/:blob_id', to: 'sites/attachments#destroy', as: :delete_attachments
   end
 
   get '/admin' => redirect('/admin/login/identifier')
