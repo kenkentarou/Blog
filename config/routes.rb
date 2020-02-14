@@ -30,8 +30,9 @@ Rails.application.routes.draw do
         patch :swap_level
       end
     end
+    delete '/delete_attachments/:blob_id', to: 'sites/attachments#destroy', as: :delete_attachments
   end
-  delete '/delete_attachments/:blob_id', to: 'sites/attachments#destroy', as: :delete_attachments
+
   get '/admin' => redirect('/admin/login/identifier')
 
   get '/tags/:tag_slug', as: :tag, to: 'articles#index'

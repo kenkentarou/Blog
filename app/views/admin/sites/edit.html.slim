@@ -14,7 +14,7 @@
 
       - if @site.favicon.attached?
         = image_tag @site.favicon_url('32x32'),class: 'img-responsive'
-        = link_to '削除',delete_attachments_path(@site.favicon.blob_id), method: :delete, class: 'btn btn-danger'
+        = link_to '削除',admin_delete_attachments_path(@site.favicon.blob_id), method: :delete, class: 'btn btn-danger'
         br
         br
 
@@ -22,7 +22,7 @@
 
       - if @site.og_image.attached?
         = image_tag @site.og_image_url(:ogp), class: 'img-responsive'
-        = link_to '削除',delete_attachments_path(@site.og_image.blob_id), method: :delete, class: 'btn btn-danger'
+        = link_to '削除',admin_delete_attachments_path(@site.og_image.blob_id), method: :delete, class: 'btn btn-danger'
 
       = f.input :main_images, as: :file, input_html: { multiple: true }, hint: 'JPEG/PNG (1200x400)'
 
@@ -31,7 +31,7 @@
           - @site.main_images.each do |file|
             .main_images
               = image_tag file.variant(resize:'100x100').processed, class: 'img-responsive'
-              = link_to '削除',delete_attachments_path(file.blob_id), method: :delete, class: 'btn btn-danger'
+              = link_to '削除',admin_delete_attachments_path(file.blob_id), method: :delete, class: 'btn btn-danger'
         br
         br
 
