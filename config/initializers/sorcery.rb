@@ -362,7 +362,7 @@ Rails.application.config.sorcery.configure do |config|
     # Unlock token mailer class
     # Default: `nil`
     #
-    # user.unlock_token_mailer = UserMailer
+    # user.unlock_token_mailer = ArticleMailer
 
     # -- activity logging --
     # Last login attribute name.
