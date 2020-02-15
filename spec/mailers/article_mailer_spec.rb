@@ -29,7 +29,7 @@ RSpec.describe ArticleMailer, type: :mailer do
     context '昨日公開済みの記事が存在する場合' do
       it '昨日公開済みの記事の情報を表示' do
         article_published_at_yesterday
-        expect(mail.body).to have_content '全体の記事数: 1件'
+        expect(mail.body).to have_content '公開済の記事数: 1件'
         expect(mail.body).to have_content '昨日の記事'
         expect(mail.body).to have_content '公開日時'
       end
@@ -38,7 +38,7 @@ RSpec.describe ArticleMailer, type: :mailer do
       it '昨日公開済みの記事の情報のみを表示' do
         article_published_at_yesterday
         article_published_at_1week_ago
-        expect(mail.body).to have_content '全体の記事数: 2件'
+        expect(mail.body).to have_content '公開済の記事数: 2件'
         expect(mail.body).to have_content '昨日の記事'
         expect(mail.body).not_to have_content '１週間以内の記事'
       end
