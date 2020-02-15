@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe ArticleMailer, type: :mailer do
   describe "公開済み記事の情報を管理者へ送信する" do
-    let(:mail) { ArticleMailer.published_email.deliver_now }
+    let(:mail) { ArticleMailer.report_summary.deliver_now }
     let(:article_draft) { create(:article, :draft) }
     let(:article_published_at_yesterday) { create(:article, :publised_at_yesterday, title: '昨日の記事') }
     let(:article_published_at_1week_ago) { create(:article, :published_at_1week_ago, title: '１週間以内の記事') }
