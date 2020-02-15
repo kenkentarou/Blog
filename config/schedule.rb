@@ -19,6 +19,10 @@ set :output, "#{Rails.root}/log/cron.log"
 every 1.hours do
   rake 'status_task:published'
 end
+
+every 1.day, at: '9:00 am' do
+  rake 'rake mail_task:mail'
+end
 #
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
