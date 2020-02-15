@@ -16,11 +16,6 @@ RSpec.describe ArticleMailer, type: :mailer do
         expect(mail.subject).to eq '公開済記事の集計結果'
       end
     end
-    context '正しい件名で送信する' do
-      it '件名に「公開済記事の集計結果」と表示' do
-        expect(mail.subject).to eq '公開済記事の集計結果'
-      end
-    end
     context '公開済みの記事が存在しない場合' do
       it '「昨日公開された記事はありません」と表示' do
         expect(mail.body).to have_content '昨日公開された記事はありません'

@@ -42,7 +42,7 @@ FactoryBot.define do
       published_at { Time.current.yesterday }
     end
 
-    trait :published_at_1week_ago do
+    trait :published_at_3days_ago do
       state { :published }
       published_at { Time.current.ago(3.days) }
     end
