@@ -37,6 +37,16 @@ FactoryBot.define do
       state { :draft }
     end
 
+    trait :publised_at_yesterday do
+      state { :published }
+      published_at { Time.current.yesterday }
+    end
+
+    trait :published_at_1week_ago do
+      state { :published }
+      published_at { Time.current.ago(3.days) }
+    end
+
     trait :with_author do
       transient do
         sequence(:author_name) { |n| "test_author_name_#{n}" }
