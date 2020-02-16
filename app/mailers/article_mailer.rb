@@ -1,5 +1,4 @@
 class ArticleMailer < ApplicationMailer
-  default parts_order: ["text/plain", "text/enriched", "text/html"]
   def report_summary
     @article_count = Article.where(state: :published).count
     @articles_published_at_yesterday = Article.where(published_at: Time.current.yesterday)
