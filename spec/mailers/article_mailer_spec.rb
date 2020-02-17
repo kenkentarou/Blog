@@ -5,7 +5,7 @@ RSpec.describe ArticleMailer, type: :mailer do
     let(:mail) { ArticleMailer.report_summary.deliver_now }
     let(:article_draft) { create(:article, :draft) }
     let(:article_published_at_yesterday) { create(:article, :publised_at_yesterday, title: '昨日の記事') }
-    let(:article_published_at_1week_ago) { create(:article, :published_at_1week_ago, title: '１週間以内の記事') }
+    let(:article_published_at_1week_ago) { create(:article, :published_at_3days_ago, title: '１週間以内の記事') }
     context 'メールを管理者のメールアトレスに送信する' do
       it 'admin@example.comへ送信' do
         expect(mail.to).to eq ['admin@example.com']
@@ -25,6 +25,7 @@ RSpec.describe ArticleMailer, type: :mailer do
       it '昨日公開済みの記事の情報を表示' do
         article_published_at_yesterday
         expect(mail.body).to have_content '公開済の記事数: 1件'
+        expect(mail.body).to match('昨日公開された記事数: 1件')
         expect(mail.body).to have_content '昨日の記事'
         expect(mail.body).to have_content '公開日時'
       end
@@ -34,6 +35,7 @@ RSpec.describe ArticleMailer, type: :mailer do
         article_published_at_yesterday
         article_published_at_1week_ago
         expect(mail.body).to have_content '公開済の記事数: 2件'
+        expect(mail.body).to match('昨日公開された記事数: 1件')
         expect(mail.body).to have_content '昨日の記事'
         expect(mail.body).not_to have_content '１週間以内の記事'
       end
